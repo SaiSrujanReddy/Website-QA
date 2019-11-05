@@ -1,0 +1,60 @@
+<div  class="container" style="margin-top:30px;">
+<ngu-carousel #myCarousel [inputs]="carouselConfig" [dataSource]="[first, second, third]">
+	<div *nguCarouselDef="let item;" class="item">
+		<div class="tile">
+			<ng-container *ngTemplateOutlet="item"></ng-container>
+		</div>
+	</div>
+
+	<ng-template #first>
+		<img src="assets/images/Signature_Banner_Desktop_20191015_1329.jpeg"/>
+	</ng-template>
+
+	<ng-template #second>
+		<img src="assets/images/Conflux_desktop.jpg">
+	</ng-template>
+
+	<ng-template #third>
+		<img src="assets/images/No_Rent_November_Desktop_20191021_1330 (1).jpg">
+	</ng-template>
+
+	<button NguCarouselNext class="rightRs"><i class="material-icons" style="color: deeppink; margin-top:5px;">
+			keyboard_arrow_left
+			</i></button>
+	<button NguCarouselPrev class="leftRs"><i class="material-icons" style="margin-top: 5px; color: deeppink">
+			keyboard_arrow_right
+			</i></button>
+	<ul class="myPoint" NguCarouselPoint>
+		<li *ngFor="let j of myCarousel.pointNumbers; let j = index" [class.active]="j==myCarousel.activePoint" (click)="myCarousel.moveTo(j)"></li>
+	</ul>
+</ngu-carousel>
+
+
+<!-- <br><br><br>
+<ngu-carousel #myCarousel [inputs]="carouselConfig1" [dataSource]="[fir, sec, thi]">
+    
+	<div *nguCarouselDef="let item;" class="item">
+		<div class="tile">
+			<ng-container *ngTemplateOutlet="item"></ng-container>
+		</div>
+	</div>
+  <button NguCarouselPrev class="leftRs"><</button>
+	<ng-template #fir>
+		<p>First1</p>
+	</ng-template>
+
+	<ng-template #sec>
+		<p>Second2</p>
+	</ng-template>
+
+	<ng-template #thi>
+		<p>Third3</p>
+	</ng-template>
+
+	<button NguCarouselNext class="rightRs">></button>
+	
+	<ul class="myPoint" NguCarouselPoint>
+		<li *ngFor="let j of myCarousel.pointNumbers; let j = index" [class.active]="j==myCarousel.activePoint" (click)="myCarousel.moveTo(j)"></li>
+	</ul>
+</ngu-carousel> -->
+</div>

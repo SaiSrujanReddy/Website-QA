@@ -1,0 +1,8 @@
+{  
+    "/webservices/*": {  
+       "target": "http://qa.colive.in",  
+       "secure": false,  
+       "logLevel": "debug",
+       "changeOrigin": true
+    }  
+ }

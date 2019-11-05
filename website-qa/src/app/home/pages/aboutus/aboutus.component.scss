@@ -1,0 +1,318 @@
+.about-us .intro {
+    padding: 80px 0;
+}
+
+    .about-us .intro h1 {
+        color: #112950;
+        font-size: 53px;
+        font-weight: 600;
+        line-height: 54px;
+        text-align: center;
+    }
+
+    .about-us .intro p:nth-child(1) {
+        color: #324B72;
+        font-size: 26px;
+        font-weight: 400;
+        letter-spacing: -0.16px;
+        line-height: 31px;
+        margin-bottom: 30px;
+    }
+
+    .about-us .intro p:nth-child(2),
+    .about-us .intro p.aboutustxt,
+    .about-us .intro p:last-child {
+        color: #324B72;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 23px;
+        opacity: 0.9000000357627869;
+    }
+
+.about-us .banner {
+    background-image: url("../../../../assets/images/about-banner.png");
+}
+
+    .about-us .banner .count-wrap {
+        padding: 100px 0px;
+    }
+
+@media (max-width: 768px) {
+    .about-us .banner .count-wrap {
+        padding: 50px 0 !important;
+    }
+}
+
+.about-us .banner .count-wrap p {
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 28px;
+    margin-bottom: 30px;
+}
+
+.about-us .banner .count-wrap .countings {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+    .about-us .banner .count-wrap .countings p {
+        margin-bottom: 10px;
+        font-size: 33px;
+        font-weight: 400;
+        line-height: 40px;
+    }
+
+    .about-us .banner .count-wrap .countings span {
+        color: #FFFFFF;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 22px;
+        opacity: 0.7602306547619048;
+    }
+
+.about-us .our-6 {
+    padding: 80px 0;
+}
+
+    .about-us .our-6 h1 {
+        color: #112950;
+        font-size: 53px;
+        font-weight: 400;
+        line-height: 54px;
+        margin-bottom: 20px;
+    }
+
+.about-us .our-6 {
+    color: #324B72;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 28px;
+}
+
+    .about-us .our-6 .icon-box-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-bottom: 40px;
+    }
+
+        .about-us .our-6 .icon-box-wrap .icon-box {
+            border: 5px solid #11295014;
+            height: 160px;
+            width: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+            .about-us .our-6 .icon-box-wrap .icon-box div {
+                text-align: center;
+            }
+
+            .about-us .our-6 .icon-box-wrap .icon-box img {
+                height: 60px;
+                margin-bottom: 10px;
+            }
+
+            .about-us .our-6 .icon-box-wrap .icon-box p {
+                color: #112950;
+                font-size: 20px;
+                font-weight: 400;
+                line-height: 24px;
+            }
+
+.about-us .our-team {
+    padding: 80px 0;
+    background-color: #F4F8FB;
+}
+
+    .about-us .our-team h1 {
+        color: #112950;
+        font-size: 53px;
+        font-weight: 400;
+        line-height: 54px;
+    }
+
+    .about-us .our-team .quote p.quote-text {
+        color: #324B72;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 28px;
+        opacity: 1 !important;
+        margin: 50px 0;
+    }
+
+    .about-us .our-team .quote .user-info {
+        margin-bottom: 30px;
+        margin-top: 30px;
+    }
+
+        .about-us .our-team .quote .user-info p.user-name {
+            color: #112950;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 19px;
+        }
+
+        .about-us .our-team .quote .user-info span {
+            color: #112950;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 19px;
+        }
+
+    .about-us .our-team p {
+        color: #324B72;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 23px;
+        opacity: 0.9000000357627869 !important;
+    }
+
+.about-us .leadership-team {
+    padding: 80px 0 0;
+}
+
+    .about-us .leadership-team h3 {
+        color: #324B72;
+        font-size: 26px;
+        font-weight: 400;
+        letter-spacing: -0.16px;
+        line-height: 31px;
+        margin-bottom: 20px;
+    }
+
+    .about-us .leadership-team .team-card {
+        margin-bottom: 30px;
+    }
+
+        .about-us .leadership-team .team-card img {
+            width: 100%;
+        }
+
+        .about-us .leadership-team .team-card .team-detail {
+            padding: 15px 10px;
+        }
+
+        .about-us .leadership-team .team-card .name {
+            color: #112950;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 19px;
+        }
+
+        .about-us .leadership-team .team-card .designation {
+            color: #8c8c8c;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 23px;
+            opacity: 0.9000000357627869;
+            font-weight: 500;
+        }
+
+@media (max-width: 1280px) {
+    .about-us .about-us .our-team {
+        padding: 50px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-us .banner .count-wrap .countings {
+        align-items: flex-start;
+    }
+
+        .about-us .banner .count-wrap .countings div {
+            flex: 1;
+        }
+
+            .about-us .banner .count-wrap .countings div:nth-child(3) {
+                text-align: center;
+            }
+
+        .about-us .banner .count-wrap .countings p {
+            font-size: 27px;
+        }
+
+    .about-us .our-6 .icon-box-wrap .icon-box {
+        height: 140px;
+        margin: -10px 10px;
+    }
+
+    .our-team {
+        background-image: none !important;
+    }
+
+        .our-team .col-md-6 {
+            min-width: 100%;
+        }
+}
+
+@media (max-width: 500px) {
+    .about-us .intro,
+    .about-us .our-6,
+    .about-us .our-team,
+    .about-us .leadership-team {
+        padding: 50px 0 !important;
+    }
+
+    .about-us h1 {
+        font-size: 30px !important;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .about-us .intro p:nth-child(1) {
+        font-size: 20px;
+        line-height: 25px;
+    }
+
+    .about-us .banner .count-wrap .countings {
+        display: block;
+        text-align: center;
+    }
+
+        .about-us .banner .count-wrap .countings div {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .about-us .banner .count-wrap .countings p {
+            margin-bottom: 0px;
+            text-align: center;
+        }
+
+    .about-us .icon-box p {
+        margin: 0 !important;
+    }
+
+    .about-us .our-6 .icon-box-wrap {
+        display: block;
+    }
+
+        .about-us .our-6 .icon-box-wrap .icon-box {
+            margin: 30px auto !important;
+        }
+
+    .about-us .our-team .quote p.quote-text {
+        margin: 30px 0;
+    }
+
+    .about-us .leadership-team .team-card {
+        padding: 0 10% 0;
+    }
+
+    .about-us .leadership-team h3 {
+        text-align: center;
+    }
+
+    .about-us .banner .count-wrap .countings div {
+        text-align: center;
+    }
+
+    .about-us .our-team .quote p.quote-text,
+    .about-us .banner .count-wrap p {
+        text-align: left;
+    }
+}

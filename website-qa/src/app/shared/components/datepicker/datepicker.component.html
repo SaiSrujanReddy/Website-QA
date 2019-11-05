@@ -1,0 +1,6 @@
+<mat-form-field class="col-12 float-left no_pad">
+  <input matInput  [matDatepicker]="picker1" [(ngModel)]="getval" placeholder={{fromdate}} required={{requiredField}}>
+  <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+  <mat-datepicker #picker1></mat-datepicker>
+</mat-form-field>
+<span class="icon-calendar calender"></span>

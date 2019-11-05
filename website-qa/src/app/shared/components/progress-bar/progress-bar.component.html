@@ -1,0 +1,18 @@
+<div class="col-4  float-left brdrRight width100 mb10 progressBar" *ngFor="let progress of progressBar">
+    <div class="col-12 float-left  no_pad annual_leave">
+      <div class="col-12 no_pad float-left">
+        <div class="col-12 no_pad float-left leave_progress">
+          <span class="float-left font-14 leave-font-clr reg-font">{{progress.leaveType}}</span>
+          <div class="float-right font-14 font-bold leave-font-clr">
+            <span class="float-left">{{progress.used_count}}</span>
+            <span class="float-left">/</span>
+            <span class="float-left">{{progress.total_count}}</span>
+          </div>
+        </div>                     
+        <mat-progress-bar mode="determinate" value="70" [ngClass]="{'annual_leave': progress.status=='annual', 'prog2': progress.status=='sick','prog3': progress.status=='comp'}"></mat-progress-bar>
+        <div class="col-12 float-left no_pad days_left">
+          {{progress.daysleft}}
+        </div>
+      </div>
+    </div>
+  </div>

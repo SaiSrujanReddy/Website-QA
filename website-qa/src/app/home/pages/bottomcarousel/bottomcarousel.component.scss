@@ -1,0 +1,72 @@
+.rightRs{
+    color: deeppink;
+    float: right;
+    font-size:25px;
+    margin-right: 12px;
+    line-height: 1.5;
+
+}
+.leftRs{
+    color: deeppink;
+    float: right;
+    font-size:25px;
+    flood-opacity: 0.4;
+}
+.myPoint {
+    list-style-type: none;
+    // text-align: center;
+    padding: 12px;
+    margin: 0;
+    white-space: nowrap;
+    overflow: auto;
+    box-sizing: border-box;
+  }
+  .myPoint  li {
+      display: inline-block;
+      border-radius: 50%;
+      border: 2px solid rgba(0, 0, 0, 0.55);
+      padding: 4px;
+      margin: 0 3px;
+      transition-timing-function: cubic-bezier(0.17, 0.67, 0.83, 0.67);
+      transition: 0.4s;
+  }
+  .myPoint  li.active {
+        background: deeppink;
+        transform: scale(1.2);
+      }
+  .navMenu {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    li {
+      display: flex;
+      a {
+        padding: 10px;
+        text-decoration: none;
+        color: black;
+        &.active {
+          background: goldenrod;
+        }
+        background: #ccc;
+        border-radius: 6px;
+      }
+      margin: 3px;
+    }
+}
+
+// for carosel sides
+.box {
+  transition: box-shadow .3s;
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  // border-radius:10px;
+  border: 1px solid #ccc;
+  background: #fff;
+  float: right;
+  
+}
+.box:hover {
+  box-shadow: 0 0 11px rgba(33,33,33,.2); 
+}

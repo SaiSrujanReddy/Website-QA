@@ -1,0 +1,58 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+//newly attched style 
+
+
+#Hyderabad,
+#Chennai{
+    float: left!important;
+    width:46%;
+    
+}
+
+#Hyderabad,
+#Chennai .cityWrapper{
+    margin-right:40px;
+}
+
+
+section{
+    padding: 50px !important;
+}
+.svgimg{
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+}
+.mat-tab-label{
+    font-size: 25px !important;
+ }
+ .coliveCommunity li{
+     display: inline-block;
+     color: #324B72;
+     font-weight: 400;
+     font-size: 14px;
+    opacity: 0.9000000357627869;
+    // list-style-type: none;
+    padding-bottom: 10px;
+    line-height: 1.5;
+    justify-content: flex-start;
+    align-items: flex-start;
+ }
+ #footer a:hover {
+    color: #f0086e;
+}
+//@at-root
+
+#Chennai,
+#Hyderabad {
+    width: 47%;
+    margin: 5px 10px;
+}
+
+    #Chennai > .cityWrapper,
+    #Hyderabad > .cityWrapper {
+        width: 28%;
+        margin-left: 25px;
+    }

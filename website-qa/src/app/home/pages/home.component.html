@@ -1,0 +1,1000 @@
+<div class="homepage-wrap">
+    <div class="banner">
+
+               <app-carousel></app-carousel>
+
+
+               <h1 class="d-none d-lg-block d-sm-block d-xl-block">
+                    <span>Unleash the Power of Co </span><br>Colive | Community | Collaborate <br />Technology Powered Fully-Managed Rental Homes.
+                </h1>
+          
+                <div class="search-container container">
+                    <h1 class=" d-lg-none d-sm-none d-xl-none d-xs-block"><span>Unleash the Power of Co </span> <br>Colive | Community | Collaborate <br />Technology Powered Fully-Managed Rental Homes.</h1>
+                    <div class="row">
+                        <div class="col-md-2 p-0 overlayLocation">
+                            <div class="form-group">
+                                  
+                                <select class="form-control" id="slcity" (change)="changeCity($event)">
+                                    <option value="" selected>Select City</option>
+                                    <option value="Bangalore,">Bangalore</option>
+                                    <option value="Chennai,">Chennai</option>
+                                    <option value="Hyderabad,">Hyderabad</option>
+                                </select>
+                                <i class="fa fa-angle-down" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="col-md-6 p-0">
+                            <div class="form-group">
+                                  <input ngx-google-places-autocomplete [options]='options' [value]="selectedCity"
+                                  #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)" style="width:450px;"/>
+                                <!-- <input type="text" class="form-control hdnSearch" id="txtSearch" onkeyup="RestrictCharecters();"> -->
+                            </div>
+                        </div>
+                        <div class="col-md-2 p-0 overlayLocation">
+                            <div class="form-group">
+                                <select class="form-control" id="slSharingType" (change)="changeShareType($event)">
+                                    <option value="0" selected>Sharing Type</option>
+                                    <option value="1">Single</option>
+                                    <option value="2">Double Sharing</option>
+                                    <option value="3">Triple Sharing</option>
+                                    <option value="4">Four Sharing</option>
+                                    <option value="8">Five Sharing</option>
+                                    <option value="9">Six Sharing</option>
+                                </select>
+                                <i class="fa fa-angle-down" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="col-md-2 p-0" data-toggle="tooltip" data-placement="right" title="Search" (click)="handleSearch()">
+                                <button type="button" class="btn btn-outline-danger" (click)="handleSearch()" style="height: 77px; font-size:18px;">Find my Home</button>
+                            <!-- <button class="btn btn-lg btn-find-home btn-primary" id="btnExplore" (click)="handleSearch()">Find my home</button> -->
+                        </div>
+                    </div>
+                    <p class="text-center mt-4 d-lg-none d-sm-none d-xl-none d-xs-block"><i class="fa fa-chevron-down" aria-hidden="true"></i></p>
+                </div>
+            </div>
+            <section class="tab-layout pb-0 m-0 ">
+                <h2 class="mb-4">Stay on your own, live with friends or live-in with your partners</h2>
+                 
+ <mat-tab-group animationDuration="0ms" mat-stretch-tabs style="text-align: center;">
+    <mat-tab label="SingleOccupancy" >
+            <ng-template mat-tab-label>
+                    <img src="/assets/images/1bhk-tab.png" style="margin-top: -8px">
+                    <span style="padding-left:20px ">Single Occupancy</span>
+                </ng-template>
+
+                <h4 style="font-weight:500; padding:40px 0 0px "><b>Full Managed ready-to move-in rental-homes</b></h4>
+
+
+        <ngu-carousel #myCarousel [inputs]="carouselTileConfig" [dataSource]="owlcarouseldata.SingleBHK">
+            <ngu-tile *nguCarouselDef="let item; let i = index;">
+              <div class="tile" class="cardbody">
+                  <img *ngIf="item.DetailedImageName != ''; else other_content" src="{{item.DetailedImageName}}">
+                  <ng-template #other_content>
+                        <img alt="{{item.PropertyName}}" src="assets/images/CoLive_Logo.png">
+                  </ng-template>
+                <div style="margin-bottom: 0.75rem">{{item.PropertyName}}</div>
+                <div><span><img src="/assets/images/marker (1).png" style="width: 15px; margin-right:10px; color: #324b72; line-height: 17px; font-size: 14px; font-weight: 400px; opacity: 0.5; text-align: left;"></span>  {{item.SubLocation}}</div>
+                <div class="row" style="padding-bottom: 40px;">
+                    <div class="col-lg-6 col-md-6 col-6">
+                        <div class="price">
+                            <h6 class="">Starting Price</h6>
+                
+                            <i class="fa fa-inr" aria-hidden="true">&nbsp;&nbsp;{{item.Price}}</i>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-6 PropertyViewDesign">
+                        <span class="property" style="color: #007bff">View Property</span>
+                    </div>
+                </div>
+
+                <div>{{item.name}}</div>
+                <hr class="line" style="width: 306.93px;">
+                <div class="scheduleFreeVissit">
+                   <span class="property">Schedule a visit</span>
+                </div>
+              </div>
+            </ngu-tile> 
+          </ngu-carousel>
+
+    </mat-tab>
+    <mat-tab label="SharedRoom">
+        <ng-template mat-tab-label>
+                <img src="/assets/images/shared-room-tab.png">
+                <span style="padding-left:20px">Shared Rooms</span>
+            </ng-template>
+            <h4 style="font-weight:500; padding:40px 0 0px "><b>Full Managed ready-to move-in rental-homes</b></h4>
+            <!-- <button NguCarouselNext class="rightRs" class="box" style=" float:right; font-size: 15px;color: deeppink !important"><i class="material-icons" style="margin-top:5px;">
+                    keyboard_arrow_left
+                    </i></button>
+              <button NguCarouselPrev class="leftRs" class="box" style=" float:right; margin-top:5px; font-size: 15px; color: deeppink"><i class="material-icons"  style="margin-top:5px;">
+                    keyboard_arrow_right
+                    </i></button> -->
+    <ngu-carousel #myCarousel [inputs]="carouselTileConfig" [dataSource]="owlcarouseldata.SingleRoom">
+        <ngu-tile *nguCarouselDef="let item; let i = index;">
+                <div class="tile">
+                        <div class="container1">
+                          <img alt="{{item.PropertyName}}" src="/assets/images/marathalli (1).jpg" style="height: 211px; border-top-left-radius: calc(.25rem - 1px);
+                              border-top-right-radius: calc(.25rem - 1px);">
+                              <!-- <div class="overlay">Quick View</div> -->
+                              </div>
+                              <!-- <img src="../../../../assets/images/marathalli (1).jpg"> -->
+                             <!-- <img *ngIf="item.DetailedImageName != ''; else other_content" src="{{item.DetailedImageName}}">
+                              <ng-template #other_content>
+                                    <img alt="{{item.PropertyName}}" src="assets/images/CoLive_Logo.png">
+                              </ng-template> -->
+                            <div class="card-data" style="padding: 10px;">
+                              <div style="margin-bottom: 0.75rem; padding-right:150px;" >{{item.PropertyName}}</div>
+                                <div style="margin-bottom: 12px; padding-right: 190px;opacity: 0.5 !important"><span><img src="assets/images/marker (1).png"
+                                    style="width: 15px; color: #324b72; line-height: 17px; font-size: 14px; font-weight: 400px;  text-align: left; margin-right: 15px; opacity: 0.5 !important"></span>
+                                      {{item.SubLocation}}
+                                </div><br>
+                              <div class="row" style="padding-bottom: 20px;">
+                                  <div class="col-lg-6 col-md-6 col-6">
+                                    <div class="price">
+                                      <h6 class="">Starting Price</h6>
+                                        <i  class="fa fa-inr" aria-hidden="true">&nbsp;&nbsp;{{item.Price}}</i>
+                                    </div>
+                                  </div>
+                                  <div class="col-lg-6 col-md-6 col-6 PropertyViewDesign">
+                                    <span class="property" style="color: #007bff">View Property</span>
+                                  </div>
+                              </div>
+                                <div>{{item.name}}</div>
+                                  <hr class="line" style="width: 306.93px;">
+                                <div class="scheduleFreeVissit">
+                               <span class="property">Schedule a visit</span>
+                              </div>
+                            </div>
+                        <!-- </div> -->
+                    </div>
+          <!-- <div class="tile" style="height:490px">
+                <img src="../../../assets/images/marathalli (1).jpg" style="height: 211px;"> -->
+
+              <!-- <img *ngIf="item.DetailedImageName != ''; else other_content" src="{{item.DetailedImageName}}">
+              <ng-template #other_content>
+                    <img alt="{{item.PropertyName}}" src="assets/images/CoLive_Logo.png">
+              </ng-template> -->
+              <!-- <div class="card-body" style="margin: 0px; padding: 0px; margin: 30px;">
+                        <h5>{{item.PropertyName}}</h5>
+                   <div><span style="margin-left:-235px; padding-top:40px"><img src="assets/images/marker (1).png" style="width: 15px; color: #324b72; font-size: 14px; font-weight: 400px; opacity: 0.5;"></span>{{item.SubLocation}}</div>
+            <div class="row" style="margin: 20px; margin-left:-36px;">
+                <div class="col-lg-6 col-md-6 col-6">
+                    <div class="price">
+                        <h6 class="">Starting Price</h6>
+
+                        <i class="fa fa-inr" aria-hidden="true">{{item.Price}}</i>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-6 PropertyViewDesign">
+                    <span class="property" style="color: #007bff">View Property</span>
+                </div>
+            </div>
+
+            <div>{{item.name}}</div>
+            <hr class="line" style="width: 306.93px;">
+            <div class="scheduleFreeVissit">
+               <span class="property">Schedule a visit</span>
+            </div>
+          </div>
+        </div> -->
+        </ngu-tile>
+      </ngu-carousel>
+
+</mat-tab>  
+
+
+
+   
+    <mat-tab label="SharedRoom"> 
+            <ng-template mat-tab-label>
+                    <img src="../../../assets/images/shared-room-tab.png">
+                    <span style="padding-left:20px">Couple Rooms</span>
+                </ng-template>
+                <h4 style="font-weight:500; padding:40px 0 0px "><b>Full Managed ready-to move-in rental-homes</b></h4>
+        <ngu-carousel #myCarousel [inputs]="carouselTileConfig" [dataSource]="owlcarouseldata.SharedRoom">
+            <ngu-tile *nguCarouselDef="let item; let i = index;">
+                    <div class="tile">
+                            <div class="container1">
+                              <img alt="{{item.PropertyName}}" src="../../../../assets/images/marathalli (1).jpg" style="height: 211px; border-top-left-radius: calc(.25rem - 1px);
+                                  border-top-right-radius: calc(.25rem - 1px);">  
+                                  <!-- <div class="overlay">Quick View</div> -->
+                                  </div>
+                                  <!-- <img src="../../../../assets/images/marathalli (1).jpg"> -->
+                                 <!-- <img *ngIf="item.DetailedImageName != ''; else other_content" src="{{item.DetailedImageName}}">
+                                  <ng-template #other_content>
+                                        <img alt="{{item.PropertyName}}" src="assets/images/CoLive_Logo.png">
+                                  </ng-template> -->
+                                <div class="card-data" style="padding: 10px;">
+                                  <div style="margin-bottom: 0.75rem; padding-right:120px;" >{{item.PropertyName}}</div>
+                                    <div style="margin-bottom: 12px; margin-right: 170px; opacity: 0.5 !important"><span><img src="assets/images/marker (1).png" 
+                                        style="width: 15px;color: #324b72; line-height: 17px; font-size: 14px; font-weight: 400px;  text-align: left; opacity: 0.5 !important"></span> 
+                                          {{item.SubLocation}}
+                                    </div>
+                                  <div class="row" style="padding-bottom: 20px;">
+                                      <div class="col-lg-6 col-md-6 col-6">
+                                        <div class="price">
+                                          <h6 class="">Starting Price</h6>
+                                            <i class="fa fa-inr" aria-hidden="true">&nbsp;&nbsp;{{item.Price}}</i>
+                                        </div>
+                                      </div>
+                                      <div class="col-lg-6 col-md-6 col-6 PropertyViewDesign">
+                                        <span class="property" style="color: #007bff">View Property</span>
+                                      </div>
+                                  </div>
+                                    <div>{{item.name}}</div>
+                                      <hr class="line" style="width: 306.93px;">
+                                    <div class="scheduleFreeVissit">
+                                   <span class="property">Schedule a visit</span>
+                                  </div>
+                                </div>
+                            <!-- </div> -->
+                        </div>
+                    </ngu-tile>          
+                </ngu-carousel>
+      
+          </mat-tab>   
+
+    <!-- <mat-tab label="CoupleRoom"> 
+            <ng-template mat-tab-label>
+                    <img src="../../../assets/images/single-room-tab.png">
+                    <span style="padding-left:20px ">Couple Rooms</span>
+                </ng-template>
+
+        <ngu-carousel #myCarousel [inputs]="carouselTileConfig" [dataSource]="owlcarouseldata.SingleRoom">
+            <ngu-tile *nguCarouselDef="let item; let i = index;">
+              <div class="tile" class="cardbody">
+                  <img src="../../../assets/images/marathalli (1).jpg"> -->
+                  <!-- <img *ngIf="item.DetailedImageName != ''; else other_content" src="{{item.DetailedImageName}}">
+                  <ng-template #other_content>
+                        <img alt="{{item.PropertyName}}" src="assets/images/CoLive_Logo.png">
+                  </ng-template> -->
+                  <!-- <div class="card-body" style="padding: 10px;">
+                <div style="margin-bottom: 0.75rem">{{item.PropertyName}}</div>
+                <div><span><img src="../../../assets/images/marker (1).png" style="width: 15px; margin-right:10px; color: #324b72; line-height: 17px; font-size: 14px; font-weight: 400px; opacity: 0.5; text-align: left;"></span>  {{item.SubLocation}}</div>
+                <div class="row" style="padding-bottom: 40px;">
+                    <div class="col-lg-6 col-md-6 col-6">
+                        <div class="price">
+                            <h6 class="">Starting Price</h6>
+                
+                            <i class="fa fa-inr" aria-hidden="true">{{item.Price}}</i>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-6 PropertyViewDesign">
+                        <span class="property" style="color: #007bff">View Property</span>
+                    </div>
+                </div>
+
+                <div>{{item.name}}</div>
+                <hr class="line" style="width: 306.93px;">
+                <div class="scheduleFreeVissit">
+                   <span class="property">Schedule a visit</span>
+                </div>
+            </div>
+              </div>
+            </ngu-tile>
+          </ngu-carousel>
+
+    </mat-tab> -->
+  </mat-tab-group> 
+  
+            </section>
+          
+          
+          
+          
+            <!-- like bg image -->
+            <section class="colive-info ">
+              <div class="colive-info-box">
+                  <div class="row d-none d-lg-block d-sm-block d-xl-block">
+                      <div class="d-flex">
+                          <div class="col-md-6">
+                              <div class="">
+                                  <p>18,000+</p>
+                                  <span>Number of bed</span>
+                              </div>
+                              <div class="">
+                                  <p>3.5 mn sq.ft</p>
+                                  <span>Area under management</span>
+                              </div>
+                              <div class="">
+                                  <p>3</p>
+                                  <span>Cities</span>
+                              </div>
+                              <div class="">
+                                  <p>1,000 Cr</p>
+                                  <span>Assets under management</span>
+                              </div>
+                              <div class="">
+                                  <p>225+</p>
+                                  <span>Corporates</span>
+                              </div>
+                          </div>
+                          <div class="col-md-6">
+                              <ul class="coliveadv">
+                                  <li>Premium Amenities</li>
+                                  <li>Cinema Room, Terrace lounge, Fitness Room</li>
+                                  <li>With High Internet Speed</li>
+                                  <li>Colive - live with like-minded people</li>
+                                  <li>Community - Live, Laugh, Love, Discover, Explore </li>
+                                  <li>Collaborate - Interact, Brainstorm or host friends</li>
+                              </ul>
+                          </div>
+                      </div>
+          
+                  </div>
+                  <div class="feature-wrap  d-lg-none d-sm-none d-xl-none d-xs-block">
+                      <div class="">
+                          <p>8000+</p>
+                          <span>Number of bed</span>
+                      </div>
+          
+                      <div class="">
+                          <p>3</p>
+                          <span>Cities</span>
+                      </div>
+                      <div class="">
+                          <p>1000 Cr</p>
+                          <span>Assets</span>
+                      </div>
+                      <div class="">
+                          <p>212+</p>
+                          <span>Companies</span>
+                      </div>
+                      <div class="last-feature">
+                          <p>2 mn sq.ft</p>
+                          <span>Area under management</span>
+                      </div>
+                      <ul class="coliveadv">
+                          <li>Premium Amenities</li>
+                          <li>Cinema Room, Terrace lounge, Fitness Room</li>
+                          <li>With High Internet Speed</li>
+                          <li>Colive - live with like-minded people</li>
+                          <li>Community - Live. Laugh, Love, Discover, Explore </li>
+                          <li>Collaborate - Interact, Brainstorm or host friends  </li>
+                      </ul>
+          
+                  </div>
+              </div>
+          </section>
+            <!-- </div> -->
+              <!-- Social and Lifestyle at Colive -->
+            <section class="lifestyle container pb-0">
+              <div class="lifestyle-tab">
+                  <ul class="nav nav-tabs">
+                      <li class="">
+                          <a data-toggle="tab" href="#social" class=" active  show"> Social life<span class="d-none d-xs-none d-lg-block d-md-block">&nbsp;at Colive</span></a>
+                      </li>
+                      <li class=""><a data-toggle="tab" class="" href="#lyfstyle">Lifestyle<span class="d-none d-xs-none d-lg-block d-md-block">&nbsp;at Colive</span></a></li>
+                  </ul>
+                  <div class="tab-content">
+                      <div id="social" class="tab-pane fade in active show">
+                          <p>Colive Community </p>
+                          <div class=" d-lg-block d-md-block d-none d-xs-none">
+                              <div class="row width9 ">
+                                  <div class="col-md-4">
+                                      <img src="../../../assets/images/pink-tick.svg" alt="" class="svgimg">
+                                      <div>
+                                          <p>The Fun doesn't stop at Colive</p>
+                                          <span>
+                                              <ul class="coliveCommunity">
+                                                  <li>Cinema Room - Watch Live Sports, Favourite TV Shows or movies with Amazon Prime, Hotstar, Netflix </li>
+                                                  <li>Relax, Entertain or play with sprawling Common Spaces</li>
+                                                  <li>Thoughtfully designed Community Zones - Fitness room, Gaming Zone, Music Lounge, Reading Corner & more </li>
+                                                  <li>Co-working Spaces - to work from home or Co-work, perfect for </li>
+                                                  <li>Lounge, Relax entertain & host friends in insta-worthy lifestyle & ambience</li>
+                                              </ul>
+                                          </span>
+                                      </div>
+                                  </div>
+                                  <div class="col-md-4">
+                                      <img src="../../../assets/images/pink-tick.svg" alt="" class="svgimg">
+                                      <div>
+                                          <p>Colive <i class="fa fa-heart-o colivelovesign" aria-hidden="true"></i> weekends</p>
+                                          <ul class="coliveCommunity">
+                                              <li>TGIF Come back home to a Barbeque party & some soothing karaoke </li>
+                                              <li>Saturday Light up your weekends with themed-parties, open spaces & great ambience</li>
+                                              <li>Stay-in Sundays Unwind & soak up the community spirit with special screenings in the Cinema Room, Stand up comedy and more </li>
+                                              <li>Colive Celebrates everything together - Birthdays, Anniversaries, Christmas, New year's, Holi, Eid ya Diwali </li>
+                                              <li>Special events at Studio Hype One-of a kind exclusive dance club for all Colivers & interesting workshops</li>
+                                          </ul>
+                                      </div>
+                                  </div>
+                                  <div class="col-md-4">
+                                      <img src="../../../assets/images/pink-tick.svg" alt="" class="svgimg">
+                                      <div>
+                                          <p>Colivers Sweat it out</p>
+                                          <ul class="coliveCommunity">
+                                              <li>Fitness rooms - Maintain an healthy lifestyle at Colive </li>
+                                              <li>Group sessions with <strong>Yoga, Zumba, Kick-boxing, Dance &Choreography</strong> </li>
+                                              <li>Colive Championships - Quarterly tournaments for <strong>Badminton, Cricket, Table Tennis, Foos- ball, FIFA & more </strong></li>
+                                          </ul>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+          
+                          <div class="row d-none d-lg-none d-md-none d-block d-xs-block">
+                              <!--Accordion wrapper-->
+                              <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
+                                  <!-- Accordion card -->
+                                  <div class="col-md-4 col-12 card">
+                                      <!-- Card header -->
+                                      <div class="card-header" role="tab" id="headingOne1">
+                                          <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1" aria-expanded="true"
+                                             aria-controls="collapseOne1">
+                                              <p class="mb-0">
+                                                  <img src="images/pink-tick.svg" alt="" class="svgimg"> The Fun doesn't stop at Colive <i class="fa fa-angle-down rotate-icon"></i>
+                                              </p>
+                                          </a>
+                                      </div>
+          
+                                      <!-- Card body -->
+                                      <div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1"
+                                           data-parent="#accordionEx">
+                                          <div class="card-body">
+                                              <span>
+                                                  <ul class="coliveCommunity">
+                                                      <li>Cinema Room - Watch Live Sports, Favourite TV Shows or movies with Amazon Prime, Hotstar, Netflix </li>
+                                                      <li>Relax, Entertain or play with sprawling Common Spaces</li>
+                                                      <li>Thoughtfully designed Community Zones - Fitness room, Gaming Zone, Music Lounge, Reading Corner & more </li>
+                                                      <li>Co-working Spaces - to work from home or Co-work, perfect for </li>
+                                                      <li>Lounge, Relax entertain & host friends in insta-worthy lifestyle & ambience</li>
+                                                  </ul>
+                                              </span>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <!-- Accordion card -->
+                                  <!-- Accordion card -->
+                                  <div class="col-md-4 col-12 card">
+                                      <!-- Card header -->
+                                      <div class="card-header" role="tab" id="headingTwo2">
+                                          <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseTwo2"
+                                             aria-expanded="false" aria-controls="collapseTwo2">
+                                              <p class="mb-0"><img src="images/pink-tick.svg" alt="" class="svgimg"> Colive <i class="fa fa-heart-o colivelovesign" aria-hidden="true"></i> weekends <i class="fa fa-angle-down rotate-icon"></i></p>
+                                          </a>
+                                      </div>
+          
+                                      <!-- Card body -->
+                                      <div id="collapseTwo2" class="collapse" role="tabpanel" aria-labelledby="headingTwo2"
+                                           data-parent="#accordionEx">
+                                          <div class="card-body">
+                                              <div>
+                                                  <ul class="coliveCommunity">
+                                                      <li>TGIF Come back home to a Barbeque party & some soothing karaoke </li>
+                                                      <li>Saturday Light up your weekends with themed-parties, open spaces & great ambience</li>
+                                                      <li>Stay-in Sundays Unwind & soak up the community spirit with special screenings in the Cinema Room, Stand up comedy and more </li>
+                                                      <li>Colive Celebrates everything together - Birthdays, Anniversaries, Christmas, New year's, Holi, Eid ya Diwali </li>
+                                                      <li>Special events at Studio Hype One-of a kind exclusive dance club for all Colivers & interesting workshops</li>
+                                                  </ul>
+                                              </div>
+                                          </div>
+                                      </div>
+          
+                                  </div>
+                                  <!-- Accordion card -->
+                                  <!-- Accordion card -->
+                                  <div class="col-md-4 col-12 card">
+          
+                                      <!-- Card header -->
+                                      <div class="card-header" role="tab" id="headingThree3">
+                                          <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree3"
+                                             aria-expanded="false" aria-controls="collapseThree3">
+                                              <p class="mb-0">
+                                                  <img src="images/pink-tick.svg" alt="" class="svgimg">Colivers Sweat it out<i class="fa fa-angle-down rotate-icon"></i>
+                                              </p>
+                                          </a>
+                                      </div>
+          
+                                      <!-- Card body -->
+                                      <div id="collapseThree3" class="collapse" role="tabpanel" aria-labelledby="headingThree3"
+                                           data-parent="#accordionEx">
+                                          <div class="card-body">
+                                              <div>
+                                                  <ul class="coliveCommunity">
+                                                      <li>Fitness rooms - Maintain an healthy lifestyle at Colive </li>
+                                                      <li>Group sessions with <strong>Yoga, Zumba, Kick-boxing, Dance &Choreography</strong> </li>
+                                                      <li>Colive Championships - Quarterly tournaments for <strong>Badminton, Cricket, Table Tennis, Foos- ball, FIFA & more </strong></li>
+                                                  </ul>
+                                              </div>
+                                          </div>
+                                      </div>
+          
+                                  </div>
+                                  <!-- Accordion card -->
+                              </div>
+                              <!-- Accordion wrapper -->
+                          </div>
+          
+                      </div>
+                      <div id="lyfstyle" class="tab-pane fade in">
+                          <p>Experience the amazing social life at Colive!</p>
+                          <div class="d-lg-block d-md-block d-none d-xs-none">
+                              <div class="row width9">
+                                  <div class="col-md-4">
+                                      <img src="../../../assets/images/pink-tick.svg" alt="" class="svgimg">
+                                      <div>
+                                          <p>Upgrade Lifestyle with Colive</p>
+                                          <ul class="coliveCommunity">
+                                              <li>Chic & designer rooms - Spacious, airy, cosy with a vibe & natural light </li>
+                                              <li>Ready-to-move-in Fully Furnished rooms - Contemporary Designs & multi-functional furniture with storage space  </li>
+                                              <li>Self-cooking equipment -  in-room luxury with microwave, Induction Stoves, smart studio Kitchen Cabinet & more</li>
+                                              <li>
+                                                  Smart Colive - Making the move, now made easy - Low Deposits, easy check-in, all-inclusive bills, explore & experience more with just a click
+                                              </li>
+                                          </ul>
+                                      </div>
+                                  </div>
+                                  <div class="col-md-4">
+                                      <img src="../../../assets/images/pink-tick.svg" alt="" class="svgimg">
+                                      <div>
+                                          <p>Experience Hassle-free living</p>
+                                          <ul class="coliveCommunity">
+                                              <li>Premium Amenities - Get freedom from doing your Daily Chores</li>
+                                              <li>Fully Managed with Service & Maintenance Support </li>
+                                              <li>Shared Economy - with shared utility spaces, resources, share the load with the Community</li>
+                                              <li>Living made easy with Professional Housekeeping, Smart Supermarket, Vending Machines, in-house super laundry & More </li>
+                                          </ul>
+                                      </div>
+                                  </div>
+                                  <div class="col-md-4">
+                                      <img src="../../../assets/images/pink-tick.svg" alt="" class="svgimg">
+                                      <div>
+                                          <p>Enjoy Unlimited benefits</p>
+                                          <ul class="coliveCommunity">
+                                              <li>Shop with Partner Brands - Special Discount Coupon Codes, offers & more for all members </li>
+                                              <li>Spread the Colive cheer & encash - Refer and Earn : Rs. 1,000 / referral </li>
+                                              <li>Explore & Commute - Use rental bikes by BOUNCE & Yulu with Special Discounts & Free Rides</li>
+                                              <li>Club Colive - Non-colivers experience the Colive way of life, an elite group with Colive advantage</li>
+                                          </ul>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+          
+                          <div class="row d-none d-lg-none d-md-none d-block d-xs-block">
+                              <!--Accordion wrapper-->
+                              <div class="accordion md-accordion" id="accordionEx1" role="tablist" aria-multiselectable="true">
+                                  <!-- Accordion card -->
+                                  <div class="col-md-4 col-12 card">
+                                      <!-- Card header -->
+                                      <div class="card-header" role="tab" id="headingOne4">
+                                          <a data-toggle="collapse" data-parent="#accordionEx1" href="#collapseOne4" aria-expanded="true"
+                                             aria-controls="collapseOne4">
+                                              <p class="mb-0">
+                                                  <img src="images/pink-tick.svg" alt="" class="svgimg"> Upgrade Lifestyle with Colive <i class="fa fa-angle-down rotate-icon"></i>
+                                              </p>
+                                          </a>
+                                      </div>
+          
+                                      <!-- Card body -->
+                                      <div id="collapseOne4" class="collapse show" role="tabpanel" aria-labelledby="headingOne4"
+                                           data-parent="#accordionEx1">
+                                          <div class="card-body">
+                                              <span>
+                                                  <ul class="coliveCommunity">
+                                                      <li>Chic & designer rooms - Spacious, airy, cosy with a vibe & natural light </li>
+                                                      <li>Ready-to-move-in Fully Furnished rooms - Contemporary Designs & multi-functional furniture with storage space  </li>
+                                                      <li>Self-cooking equipment -  in-room luxury with microwave, Induction Stoves, smart studio Kitchen Cabinet & more</li>
+                                                      <li>
+                                                          Smart Colive - Making the move, now made easy - Low Deposits, easy check-in, all-inclusive bills, explore & experience more with just a click
+                                                      </li>
+                                                  </ul>
+                                              </span>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <!-- Accordion card -->
+                                  <!-- Accordion card -->
+                                  <div class="col-md-4 col-12 card">
+                                      <!-- Card header -->
+                                      <div class="card-header" role="tab" id="headingTwo5">
+                                          <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseTwo5"
+                                             aria-expanded="false" aria-controls="collapseTwo5">
+                                              <p class="mb-0"><img src="images/pink-tick.svg" alt="" class="svgimg">Experience Hassle-free living<i class="fa fa-angle-down rotate-icon"></i></p>
+                                          </a>
+                                      </div>
+                                      <!-- Card body -->
+                                      <div id="collapseTwo5" class="collapse" role="tabpanel" aria-labelledby="headingTwo5"
+                                           data-parent="#accordionEx1">
+                                          <div class="card-body">
+                                              <div>
+                                                  <ul class="coliveCommunity">
+                                                      <li>Premium Amenities - Get freedom from doing your Daily Chores</li>
+                                                      <li>Fully Managed with Service & Maintenance Support </li>
+                                                      <li>Shared Economy - with shared utility spaces, resources, share the load with the Community</li>
+                                                      <li>Living made easy with Professional Housekeeping, Smart Supermarket, Vending Machines, in-house super laundry & More </li>
+                                                  </ul>
+                                              </div>
+                                          </div>
+                                      </div>
+          
+                                  </div>
+                                  <!-- Accordion card -->
+                                  <!-- Accordion card -->
+                                  <div class="col-md-4 col-12 card">
+                                      <!-- Card header -->
+                                      <div class="card-header" role="tab" id="headingThree6">
+                                          <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseThree6"
+                                             aria-expanded="false" aria-controls="collapseThree6">
+                                              <p class="mb-0"><img src="images/pink-tick.svg" alt="">Enjoy Unlimited benefits<i class="fa fa-angle-down rotate-icon"></i></p>
+                                          </a>
+                                      </div>
+                                      <!-- Card body -->
+                                      <div id="collapseThree6" class="collapse" role="tabpanel" aria-labelledby="headingThree6"
+                                           data-parent="#accordionEx1">
+                                          <div class="card-body">
+                                              <div>
+                                                  <ul class="coliveCommunity">
+                                                      <li>Shop with Partner Brands - Special Discount Coupon Codes, offers & more for all members </li>
+                                                      <li>Spread the Colive cheer & encash - Refer and Earn : Rs. 1,000 / referral </li>
+                                                      <li>Explore & Commute - Use rental bikes by BOUNCE & Yulu with Special Discounts & Free Rides</li>
+                                                      <li>Club Colive - Non-colivers experience the Colive way of life, an elite group with Colive advantage</li>
+                                                  </ul>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <!-- Accordion card -->
+                              </div>
+                              <!-- Accordion wrapper -->
+                          </div>
+                      </div>
+                  </div>
+          
+                  <!-- Photo Grid -->
+                  <div class="row">
+                      <div class="col-md-3">
+                          <img class="card-img-top" src="../../../assets/images/IMG_4092-01.jpg" alt="Card image cap">
+                      </div>
+                      <div class="col-md-3">
+                          <img class="card-img-top-panel" src="../../../assets/images/IMG_4092-02.jpg" alt="Card image">
+                          <img class="card-img-top mt-4" class="img-panel2" src="../../../assets/images/Bitmap (10).png" alt="Card image">
+                      </div>
+                      <div class="col-md-3">
+                          <img class="card-img-top image_height" src="../../../assets/images/IMG_4092-03.jpg" alt="Card image">
+                      </div>
+                      <div class="col-md-3">
+                          <img class="card-img-top-panel" src="../../../assets/images/IMG_4092-04.jpg" alt="Card image">
+                          <img class="card-img-top-panel" src="../../../assets/images/IMG_4092-05.jpg" alt="Card image" style="margin-top:25px">
+                      </div>
+          
+                      <div class="anchor-button">
+                          <a href="/community" class="button_anchor">View our community page</a>
+                      </div>
+                  </div>
+              </div>
+            </section>
+            <!-- feature's of colive-->
+             <!-- Features of Colive -->
+             <section class="features ">
+              <div class="container-fluid">
+                  <h2>Our Features</h2>
+                  <div class="row">
+                      <div class="feature-wrap">
+                          <ul class="nav nav-tabs">
+                              <li><a data-toggle="tab" href="#style" class="active show"> Style</a></li>
+                              <li><a data-toggle="tab" href="#safety">Safety</a></li>
+                              <li><a data-toggle="tab" href="#service">Service</a></li>
+                              <li><a data-toggle="tab" href="#saving">Savings</a></li>
+                              <li><a data-toggle="tab" href="#smart">Smart</a></li>
+                              <li><a data-toggle="tab" href="#socials">Social</a></li>
+                          </ul>
+                          <div class="tab-content">
+                              <div id="style" class="tab-pane fade in active show">
+                                  <div class="row ">
+                                      <div class="col-md-4 o-feature">
+                                          <div>
+                                              <img src="../../../assets/images/modern-furnishing.png" alt="">
+                                          </div>
+                                          <div>
+                                              <p>Chic & contemporary furniture</p>
+                                          </div>
+                                      </div>
+                                      <div class="col-md-4 o-feature">
+                                          <div>
+                                              <img src="../../../assets/images/modern-storage-space.png" />
+                                          </div>
+                                          <div>
+                                              <p>Mordern storage spaces</p>
+                                          </div>
+                                      </div>
+                                      <div class="col-md-4 o-feature">
+                                          <div>
+                                              <!--<img src="images/features/Community-Kitchen.png" alt="">-->
+                                              <img src="../../../assets/images/self-cooking.png" />
+                                          </div>
+                                          <div>
+                                              <p>Self-cooking equipments</p>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div id="safety" class="tab-pane fade in ">
+                                  <div class="row ">
+                                      <div class="col-md-4 o-feature">
+                                          <div>
+                                              <img src="../../../assets/images/Emergency-Response-team.png" alt="">
+                                          </div>
+                                          <div>
+                                              <p>Emergency Response Team</p>
+                                          </div>
+                                      </div>
+                                      <div class="col-md-4 o-feature">
+                                          <div>
+                                              <img src="../../../assets/images/CCT-and-Video-Surveillance.png" alt="">
+                                          </div>
+                                          <div>
+                                              <p>CCTV & video surveillance</p>
+                                          </div>
+                                      </div>
+                                      <div class="col-md-4 o-feature">
+                                          <div>
+                                              <img src="../../../assets/images/Facial-Recognition-Based-Key-Management.png" alt="">
+                                          </div>
+                                          <div>
+                                              <p>Facial Recognition Access Management Engine</p>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div id="service" class="tab-pane fade in ">
+                                  <div class="row ">
+                                      <div class="col-md-4 o-feature">
+                                          <div>
+                                              <img src="images/features/Professional-House-Keeping.png" alt="">
+                                          </div>
+                                          <div>
+                                              <p>Professional housekeeping</p>
+                                          </div>
+                                      </div>
+                                      <div class="col-md-4 o-feature">
+                                          <div>
+                                              <!--<img src="images/features/Professional-House-Keeping.png" alt="">-->
+                                              <img src="../../../assets/images/power-backup.png"/>
+                                          </div>
+                                          <div>
+                                              <p>Power back-up</p>
+                                          </div>
+                                      </div>
+                                      <div class="col-md-4 o-feature">
+                                          <div>
+                                              <img src="../../../assets/images/On-Demand-Maintenance-Support.png" alt="">
+                                          </div>
+                                          <div>
+                                              <p>Service & maintenance support</p>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div id="saving" class="tab-pane fade in ">
+                                  <div class="row ">
+                                      <div class="col-md-4 offset-lg-2 offset-0 o-feature">
+                                          <div>
+                                              <img src="../../../assets/images/Affordable-Rentals.png" alt="">
+                                          </div>
+                                          <div>
+                                              <p>Pocket friendly value rentals</p>
+                                          </div>
+                                      </div>
+                                      <div class="col-md-4 o-feature">
+                                          <div>
+                                              <img src="../../../assets/images/Pay-Deposit-in-Installments.png" alt="">
+                                          </div>
+                                          <div>
+                                              <p>2 months deposit</p>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div id="smart" class="tab-pane fade in ">
+                                  <div class="row ">
+                                      <div class="col-md-4 o-feature">
+                                          <div>
+                                              <img src="../../../assets/images/digital-door-lock.png" />
+                                          </div>
+                                          <div>
+                                              <p>Digital door locks</p>
+                                          </div>
+                                      </div>
+                                      <div class="col-md-4 o-feature">
+                                          <div>
+                                              <img src="../../../assets/images/High-Speed-Internet.png" alt="">
+                                          </div>
+                                          <div>
+                                              <p>High speed internet</p>
+                                          </div>
+                                      </div>
+                                      <div class="col-md-4 o-feature">
+                                          <div>
+                                              <img src="../../../assets/images/Co-working-Space.png" alt="">
+                                          </div>
+                                          <div>
+                                              <p>Urban co-working space</p>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div id="socials" class="tab-pane fade in ">
+                                  <div class="row ">
+                                      <div class="col-md-3 o-feature">
+                                          <div>
+                                              <img src="../../../assets/images/cinema-room.png" />
+                                          </div>
+                                          <div>
+                                              <p>Cinema room</p>
+                                          </div>
+                                      </div>
+                                      <div class="col-md-3 o-feature">
+                                          <div>
+                                              <!--<img src="images/features/Free-Holiday-once-a-quarter.png" alt="">-->
+                                              <img src="../../../assets/images/Fitness-Room.png" />
+                                          </div>
+                                          <div>
+                                              <p>Fitness room</p>
+                                          </div>
+                                      </div>
+                                      <div class="col-md-3 o-feature">
+                                          <div>
+                                              <img src="../../../assets/images/Community-Kitchen.png" alt="">
+                                          </div>
+                                          <div>
+                                              <p>Community kitchen</p>
+                                          </div>
+                                      </div>
+          
+                                      <div class="col-md-3 o-feature">
+                                          <div>
+                                              <img src="../../../assets/images/events-and-celebrations.png" />
+                                          </div>
+                                          <div>
+                                              <p>Events & celebrations</p>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+               
+                   </div>
+              </div>
+          </section>
+            <!-- branch location's -->
+             <!-- Branch Locations  -->
+             <section class="location container" style="padding-top:40px;">
+              <div class="location-wrap">
+                  <div class="row">
+                      <div class="col-md-4">
+                          <a href="/Bangalore?lat=12.989991&long=77.645392&rad=1&loc=Bangalore">
+                              <div class="position-relative">
+                                  <div>
+                                      <img src="../../../assets/images/bangalore.jpg" alt="">
+                                  </div>
+                                  <div class="img-text">
+                                      <p>Bangalore</p>
+                                      <span>HSR, Marathalli, Silk board, Whitefield</span>
+                                  </div>
+                              </div>
+                          </a>
+                      </div>
+                      <div class="col-md-4">
+                          <a href="/Chennai?lat=13.040523&long=80.328032&rad=1&loc=Chennai">
+                              <div class="position-relative">
+                                  <div>
+                                      <img src="../../../assets/images/chennai.jpg" alt="">
+                                  </div>
+                                  <div class="img-text">
+                                      <p>Chennai</p>
+                                      <span>OMR, Porur, Vadapalani</span>
+                                  </div>
+                              </div>
+                          </a>
+                      </div>
+                      <div class="col-md-4">
+                          <a href="/Hyderabad?lat=17.408089&long=78.472452&rad=1&loc=Hyderabad">
+                              <div class="position-relative">
+                                  <div>
+                                      <img src="../../../assets/images/hyderabad.jpg" alt="">
+                                  </div>
+                                  <div class="img-text">
+                                      <p>Hyderabad</p>
+                                      <span>Gachibowli</span>
+                                  </div>
+                              </div>
+                          </a>
+                      </div>
+                  </div>
+              </div>
+          
+          </section>
+          
+              <!--  -->
+               <!-- Testimonial -->
+              
+                <section class="members">
+                       
+                  <div class="container">
+                      <h2 class="text-center">See what our members say ...</h2>
+                  </div>  
+
+                  <app-bottomcarousel></app-bottomcarousel>
+                      <!--<div class="row member-wrap">
+                          <div class="col-lg-12 col-md-12 col-12">
+                              <div class="carouesl-wrap">
+                                  <div class="owl-carousel owl-theme" id="carousel-comment">
+          
+                                      <div class="item">
+                                          <div class="review">
+                                              <div class="user">
+                                                  <img src="../../../assets/images/PRADEEBPATRA.jpg" class="rounded-circle" alt="" />
+                                                  <div class="comment">
+                                                      <p><b>PRADEEB PATRA</b></p>
+                                                      <span>
+                                                          <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
+                                                      </span>
+                                                  </div>
+                                              </div>
+                                              <div class="comment">
+                                                  <p>
+                                                      “So i have been a part of co live family for the past two years. The easiest thing in bangalore is to find a job and the most difficult is to find a comfortable place to stay at a affordable cost coz bangalore real estate is real expensive.”
+                                                  </p>
+                                                  <b>SKN</b>
+                                              </div>
+                                          </div>
+                                          <div class="review">
+                                              <div class="user">
+                                                  <img src="../../../assets/images/PRANSSHUSHARMA.jpg" class="rounded-circle" alt="" />
+                                                  <div class="comment">
+                                                      <p><b>PRANSSHU SHARMA</b></p>
+                                                      <span>
+                                                          <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
+                                                      </span>
+                                                  </div>
+                                              </div>
+                                              <div class="comment">
+                                                  <p>“Hi,I am writing to discuss my journey with Colive.I came in Bangalore seeking job. After i got job i had to seek for a place near my office. Before Colive i searched many places but they were all poor”</p>
+                                                  <b>PRIME TOWERS</b>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="item">
+                                          <div class="review">
+                                              <div class="user">
+                                                  <img src="../../../assets/images/DHRUVGAUR.jpg" class="rounded-circle" alt="">
+                                                  <div class="comment">
+                                                      <p><b>DHRUV GAUR</b></p>
+                                                      <span>
+                                                          <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
+                                                      </span>
+                                                  </div>
+                                              </div>
+                                              <div class="comment">
+                                                  <p>“Hi,I have been staying in Colive's Prime Tower Property (BTM), since Nov 2016. My stay till now has been of one and half years, and that itself goes on to speak about the level of satisfaction I feel here.”</p>
+                                                  <b>PRIME TOWERS</b>
+                                              </div>
+                                          </div>
+                                          <div class="review">
+                                              <div class="user">
+                                                  <img src="../../../assets/images/KARTHIK.jpg" class="rounded-circle" alt="">
+                                                  <div class="comment">
+                                                      <p><b>KARTHIK TEJA REDDY</b></p>
+                                                      <span>
+                                                          <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
+                                                      </span>
+                                                  </div>
+                                              </div>
+                                              <div class="comment">
+                                                  <p>“Hi this is karthik. I am staying in Colive from past 8 months. Its been a awsome place who are accomdating for students,young employees who are gtng to start their life in banglore.”</p>
+                                                  <b>SSN</b>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-md-5 d-none">
+                          </div>
+                      </div>-->
+                  
+              </section>
+          </div>       

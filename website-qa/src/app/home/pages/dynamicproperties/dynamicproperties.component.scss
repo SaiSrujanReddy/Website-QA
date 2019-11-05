@@ -1,0 +1,257 @@
+.card{
+  height:470px !important;
+}
+.card-data{
+  padding:15px;
+}
+.card-body{
+  padding:0 !important;
+}
+
+  .scheduleFreeVissit{
+    text-align: center;
+    background: #ef0073;
+    color: #fff;
+    font-weight: bold;
+    padding: 8px;
+  }
+  .scheduleFreeVissit span {
+    color: #fff !important;
+  }
+  
+.overlay {
+  position: absolute; 
+  bottom: 0; 
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1; 
+  width: 100%;
+  transition: .5s ease;
+  opacity:0;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.container1:hover .overlay {
+  opacity: 1;
+}
+// more filter
+
+.megamenu-li {
+  position: static;
+  margin-top: -20px; 
+}
+
+.megamenu {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  right: 0;
+  padding: 15px; }
+  h6 {
+    color: deeppink;
+  }
+  .apply-filter{
+    color: deeppink;
+  }
+// more filter
+
+
+#cssmenu ul,
+#cssmenu ul li,
+#cssmenu ul li a,
+#cssmenu #menu-button {
+    margin: 0;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    list-style: none;
+    line-height: 1;
+    display: block;
+    /* position: relative; */
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background: #fff;
+}
+
+#cssmenu:after,
+#cssmenu > ul:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+#cssmenu #menu-button {
+    display: none;
+}
+
+#cssmenu > ul > li {
+    float: left;
+}
+
+    #cssmenu > ul > li > a {
+        color: #324b72;
+        text-decoration: none;
+        /* margin-top: 4px; */
+        font-weight: 500;
+        text-transform: capitalize;
+        -webkit-transition: color .25s ease;
+        -moz-transition: color .25s ease;
+        transition: color .25s ease;
+        font-size: 13px;
+    }
+
+    #cssmenu > ul > li:hover > a {
+        color: #ef0073;
+    }
+
+    #cssmenu > ul > li.has-sub > a {
+        padding-right: 30px;
+    }
+
+#cssmenu ul > li.has-sub > a:after {
+    position: absolute;
+    top: 22px;
+    right: 11px;
+    width: 8px;
+    height: 2px;
+    display: block;
+    background: #dddddd;
+    content: '';
+    -webkit-transition: background .25s ease;
+    -moz-transition: background .25s ease;
+    transition: background .25s ease;
+}
+
+#cssmenu > ul > li.has-sub:hover > a:after,
+#cssmenu > ul > li.has-sub > a:hover:after {
+    background: #ffffff;
+}
+
+#cssmenu ul > li.has-sub > a:before {
+    position: absolute;
+    top: 19px;
+    right: 14px;
+    display: block;
+    width: 2px;
+    height: 8px;
+    background: #dddddd;
+    content: '';
+    -webkit-transition: all .25s ease;
+    -moz-transition: all .25s ease;
+    -ms-transition: all .25s ease;
+    -o-transition: all .25s ease;
+    transition: all .25s ease;
+}
+
+#cssmenu ul > li.has-sub:hover > a:before,
+#cssmenu ul > li.has-sub > a:hover:before {
+    top: 23px;
+    height: 0;
+}
+
+#cssmenu ul ul {
+    position: absolute;
+    top: 53px;
+    left: -1px;
+    width: 100%;
+    display: none;
+    height: 83vh;
+    background: hsla(0, 0%, 0%, 0.7);
+}
+
+    #cssmenu ul ul ul {
+        margin-left: 100%;
+        top: 0;
+    }
+
+    #cssmenu ul ul li {
+        -webkit-transition: height .25s ease;
+        -moz-transition: height .25s ease;
+        transition: height .25s ease;
+        padding: 0 20px;
+        margin: 0 auto;
+        width: 98%;
+        position: relative;
+        padding-bottom: 10px;
+        max-height: 383px;
+        /* overflow: hidden; */
+        overflow-y: scroll;
+    }
+
+        #cssmenu ul ul li a {
+            padding: 11px 15px;
+            border-bottom: 1px solid rgba(150, 150, 150, 0.15);
+            font-size: 14px;
+            text-decoration: none;
+            color: #324b72;
+            font-weight: 500;
+        }
+
+        #cssmenu ul ul li:last-child > a,
+        #cssmenu ul ul li.last-item > a {
+            border-bottom: 0;
+        }
+
+        #cssmenu ul ul li:hover > a,
+        #cssmenu ul ul li a:hover {
+            color: #ffffff;
+        }
+
+        #ancFilter.active {
+          color: #ef0073
+      }
+      // map view button
+
+
+      .button {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.4s;
+        cursor: pointer;
+        height: 40px;
+        margin-bottom: -20px;
+      }
+
+
+      .button3 {
+        background-color: white; 
+        color: black; 
+        border: 2px solid #f44336;
+        line-height: 4px;
+        margin-top: -10px;
+      }
+
+      .button3:hover {
+        background-color: #ef0073;
+        color: white;
+      }
+
+      // more filter show hide div
+
+
+    //   .locations-panel {
+    //     position:absolute;
+    //     left:0px;
+    //     top:75px;
+    //     color:black;
+    //     width:100%;
+    //     height: 900px;
+    //     padding:0px;
+    //     background:white;
+    //     text-align: center;
+    // }

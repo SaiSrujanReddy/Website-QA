@@ -1,0 +1,107 @@
+@media screen and (min-width : 1367px){
+    .layoutMain-section,.header-panel,.managerLayoutMain-section {
+        margin: 0 auto !important;
+        max-width: 1366px !important;
+        float: none !important;
+        display: block !important;
+    }
+    .width20{
+        width: 20%;
+    }
+    .managerLayoutMain-section{
+        margin-top: 60px !important;
+    }
+    
+}
+@media screen and (min-width : 1024px) and (min-width : 1365px){
+    .width20{
+        width: 20%;
+    }
+   
+
+}
+@media screen and (min-width : 1024px) and (max-width : 1366px) and (orientation:portrait){
+   
+    .width20{
+        width: 20%;
+    }
+}
+@media screen and (max-width : 1024px) and (orientation:landscape){
+    .width20{
+        width: 20%;
+    }
+    .width100{
+        width: 100%;
+        max-width: 100%;
+    }
+    .width50{
+        width: 100%;
+        max-width: 100%;
+    }
+    .mTop10Mobile{
+        margin-top: 10px;
+    }
+    .paddingRight0Mobile{
+        padding-right: 0;
+    }
+  
+}
+@media screen and (max-width : 1023px){
+    .width20{
+        width: 100%;
+    }
+    .layoutLeft-section{
+        display: none;
+    }
+    .commonStyle{
+        position: unset;
+    }
+    .width100{
+        width: 100%;
+        max-width: 100%;
+    }
+    .width50{
+        width: 100%;
+        max-width: 100%;
+    }
+    .mTop10Mobile{
+        margin-top: 10px;
+    }
+    .paddingRight0Mobile{
+        padding-right: 0;
+    }
+    .brdrRight{
+        border: none;
+    }
+    .paddingLeft0Mobile{
+        padding-left: 0;
+    }
+    .leave_history button{
+        top: -25px !important;
+    }
+    .mTop20Mobile{
+        margin-top: 20px;
+    }
+    .transparentbutton,.greenbutton,.leaveBtns{
+        width: 100%;
+    }
+    .mrgnLeft15{
+        margin-left: 0 !important;
+    }
+    .padding0Mobile{
+        padding: 0;
+    }
+    .transparentbutton{
+        margin-right: 0;
+    }
+}
+@media screen and (max-width : 767px){
+    .width20{
+        width: 100%;
+    }
+}
+@media screen and (max-width : 320px){
+    .width20{
+        width: 100%;
+    }
+}

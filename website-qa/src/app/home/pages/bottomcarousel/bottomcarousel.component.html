@@ -1,0 +1,114 @@
+<div  class="container" style="margin-top:30px;">
+  <ngu-carousel #myCarousel [inputs]="carouselConfig" [dataSource]="[first, second]">
+    <div *nguCarouselDef="let item;" class="item">
+      <div class="tile">
+        <ng-container *ngTemplateOutlet="item"></ng-container>
+      </div>
+    </div>
+  
+    <ng-template #first>
+      <!-- <img src="assets/images/Signature_Banner_Desktop_20191015_1329.jpeg"/> -->
+      <!-- <div class="item"> -->
+      <div class="review">
+          <div class="user">
+              <img src="../../../../assets/images/PRADEEBPATRA.jpg" class="rounded-circle" alt="Testimonial_Image_1" style="width:5%; height:5%; float: left; padding: 10px" />
+              <div class="comment">
+                  <p><b>PRADEEB PATRA</b></p>
+                  <span>
+                      <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
+                  </span>
+              </div>
+          </div>
+          <div class="comment">
+              <p>
+                  “So i have been a part of co live family for the past two years. The easiest thing in bangalore is to find a job and the most difficult is to find a comfortable place to stay at a affordable cost coz bangalore real estate is real expensive.”
+              </p>
+              <b style="font-weight: 500 !important">SKN</b>
+          </div>
+      </div>
+      <hr>
+      <div class="review">
+          <div class="user">
+              <img src="../../../../assets/images/PRANSSHUSHARMA.jpg" class="rounded-circle" alt="Testimonial_Image_2" style="width: 5%; height:5%; float:left;" />
+              <div class="comment">
+                  <p><b>PRANSSHU SHARMA</b></p>
+                  <span>
+                      <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
+                  </span>
+              </div>
+          </div>
+          <div class="comment">
+              <p>“Hi,I am writing to discuss my journey with Colive.I came in Bangalore seeking job. After i got job i had to seek for a place near my office. Before Colive i searched many places but they were all poor”</p>
+              <b>PRIME TOWERS</b>
+          </div>
+      </div>
+  <!-- </div>   -->
+    </ng-template>
+  
+    <ng-template #second>
+        <div class="item">
+            <div class="review">
+                <div class="user">
+                    <img src="../../../../assets/images/DHRUVGAUR.jpg" class="rounded-circle" alt="Testimonial_Image_3" style="width: 5%; height:5%; float:left;">
+                    <div class="comment">
+                        <p><b>DHRUV GAUR</b></p>
+                        <span>
+                            <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="comment">
+                    <p>“Hi,I have been staying in Colive's Prime Tower Property (BTM), since Nov 2016. My stay till now has been of one and half years, and that itself goes on to speak about the level of satisfaction I feel here.”</p>
+                    <b>PRIME TOWERS</b>
+                </div>
+            </div>
+            <hr>
+            <div class="review">
+                <div class="user">
+                    <img src="../../../../assets/images/KARTHIK.jpg" class="rounded-circle" alt="Testimonial_Image_4" style="width: 5%; height:5%; float:left;">
+                    <div class="comment">
+                        <p><b>KARTHIK TEJA REDDY</b></p>
+                        <span>
+                            <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="comment">
+                    <p>“Hi this is karthik. I am staying in Colive from past 8 months. Its been a awsome place who are accomdating for students,young employees who are gtng to start their life in banglore.”</p>
+                    <b>SSN</b>
+                </div>
+            </div>
+        </div>
+    <!-- </div> -->
+
+    </ng-template>
+    <!-- <ng-template>
+        <div class="iteam">
+             <img src="../../../../assets/images/marathalli (1).jpg">
+        </div>
+    </ng-template>
+    <ng-template>
+        <div class="iteam1">
+            <img src="../../../../assets/images/marker (1).png">
+        </div>
+    </ng-template>
+    <ng-template>
+        <div class="">
+            <img src="../../../../assets/images/modern-furnishing.png">
+        </div>
+    </ng-template> -->
+  <!-- <div class="owl"> -->
+      <button NguCarouselNext class="rightRs" class="box" style=" font-size: 15px;color: deeppink !important"><i class="material-icons" style="margin-top:5px;">
+            keyboard_arrow_left
+            </i></button>
+      <button NguCarouselPrev class="leftRs" class="box" style=" margin-top:5px; font-size: 15px; color: deeppink"><i class="material-icons"  style="margin-top:5px;">
+            keyboard_arrow_right
+            </i></button>
+  <!-- </div> -->
+    
+
+    <ul class="myPoint" NguCarouselPoint>
+      <li *ngFor="let j of myCarousel.pointNumbers; let j = index" [class.active]="j==myCarousel.activePoint" (click)="myCarousel.moveTo(j)"></li>
+    </ul>
+  </ngu-carousel>
+</div>

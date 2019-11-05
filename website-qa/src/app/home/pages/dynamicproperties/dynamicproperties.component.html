@@ -1,0 +1,269 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-top: 40px">
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <mat-radio-group 
+    aria-labelledby="example-radio-group-label"
+    class="example-radio-group"
+    [(ngModel)]="favoriteSeason">
+        <mat-radio-button class="example-radio-button"  value="0" (change)="radioChange($event)">
+            SharedRoom
+        </mat-radio-button>&nbsp;&nbsp;
+        <mat-radio-button class="example-radio-button"  value="1" (change)="radioChange($event)">
+              SingleRoom
+        </mat-radio-button>&nbsp;&nbsp;
+        <mat-radio-button class="example-radio-button"  value="2" (change)="radioChange($event)">
+                CoupleRoom
+        </mat-radio-button>&nbsp;&nbsp;      
+   
+        <mat-radio-button (click)="toggle()" style="margin-left: -15px;">
+        <!-- <div> -->
+            <li class="nav-item dropdown megamenu-li">
+                <a href="#" class="nav-link  dropdown-toggle" aria-haspopup="true" id="navitem-1" data-toggle="dropdown">
+                    More Filter
+                  </a>
+                <div class="dropdown-menu megamenu" aria-labelledby="navitem-1">
+                  <div class="row">
+                    <div class="col-sm-3 col-lg-3">
+                        <h6>Price Range</h6>
+                        <mat-slider></mat-slider>
+                    </div>
+                    <div class="col-sm-3 col-lg-3">
+                        <h6>Sharing Type</h6>
+                        <ul style="list-style: none;">
+                            <li> <mat-checkbox>Any</mat-checkbox></li>
+                            <li> <mat-checkbox>Single</mat-checkbox></li>
+                            <li><mat-checkbox>Double Sharing</mat-checkbox></li>
+                            <li> <mat-checkbox>Triple Sharing</mat-checkbox></li>
+                            <li><mat-checkbox>Four Sharing</mat-checkbox></li>
+                            <li><mat-checkbox>Five Sharing</mat-checkbox></li>
+                            <li><mat-checkbox>Six Sharing</mat-checkbox></li>
+                          </ul>  
+                      <!-- <a class="dropdown-item" href="#">Item</a>
+                      <a class="dropdown-item" href="#">Item</a> -->
+                    </div>
+                    <div class="col-sm-3 col-lg-3">
+                        <h6>Room Type</h6>
+                        <ul style="list-style: none;">
+                            <li> <mat-checkbox>Any</mat-checkbox></li>
+                            <li> <mat-checkbox>(C1) Apartment without Living and Kitchen</mat-checkbox></li>
+                            <li><mat-checkbox>(C) Apartment with living and kitchen</mat-checkbox></li>
+                            <li> <mat-checkbox>(A) Studio without Kitchen</mat-checkbox></li>
+                            <li><mat-checkbox>(A1) Studio with Kitchen</mat-checkbox></li>
+                            <li> <mat-checkbox>(B) 1BHK Apartment with Living and Kitchen</mat-checkbox></li>
+                            <li><mat-checkbox>(C1) Apartment without Living and Kitchen</mat-checkbox></li>
+                            <li><mat-checkbox>(D1) Apartment without Living & Kitchen in Society</mat-checkbox></li>
+                            <li><mat-checkbox>(D2) Apartment with Living Room in Society</mat-checkbox></li>
+                            <li><mat-checkbox>(E) Villa</mat-checkbox></li>
+                            <li><mat-checkbox>Studio</mat-checkbox></li>
+                            <li><mat-checkbox>0</mat-checkbox></li>
+                           
+                          </ul> 
+                      </div>
+                      <div class="col-sm- col-lg-1" style="float: right;">
+                          <h6>Bath Type</h6>
+                          <ul style="list-style: none;">
+                              <li><mat-checkbox>Any</mat-checkbox></li>
+                              <li><mat-checkbox>Attached</mat-checkbox></li>
+                              <li><mat-checkbox>Non Attached</mat-checkbox></li>
+                          </ul>
+                        </div>
+                  </div>
+                  <div class="row pt-2 mt-2 border-top MviewFixedDesign">
+                      <div class="col-lg-12 col-12">
+                          <div class="pull-right inline-display pr-2">
+                              <button class="btn btn-success" onclick="ResetSearchFilter();">Reset</button>&nbsp;&nbsp;
+                              <button class="btn btn-outline-danger" onclick="ApplySearchFilter(0);">Apply</button>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+                
+              </li>
+        <!-- </div> -->
+
+                     
+        </mat-radio-button>&nbsp;&nbsp;
+        <!-- <ng-container *ngIf="show">
+            <div style="margin: 0 auto;text-align: left;">
+              <div class="row">
+              
+                <div class="col-lg-2 col-md-2 col-12">
+                    <div class="filter-wrap">
+                        <div class="title">
+                            <h5>Price Range</h5>
+                        </div>
+                        <mat-slider></mat-slider>
+                    
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-12">
+                    <div class="filter-wrap">
+                        <div class="title">
+                            <h5>Sharing Type</h5>
+                        </div>
+                        <div id="divRoomType">
+                          <ul style="list-style: none;">
+                            <li> <mat-checkbox>Any</mat-checkbox></li>
+                            <li> <mat-checkbox>Single</mat-checkbox></li>
+                            <li><mat-checkbox>Double Sharing</mat-checkbox></li>
+                            <li> <mat-checkbox>Triple Sharing</mat-checkbox></li>
+                            <li>   <mat-checkbox>Four Sharing</mat-checkbox></li>
+                            <li> <mat-checkbox>Five Sharing</mat-checkbox></li>
+                            <li><mat-checkbox>Six Sharing</mat-checkbox></li>
+                          </ul>  
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-5 col-12">
+                    <div class="filter-wrap">
+                        <div class="title">
+                            <h5>Room Type</h5>
+                        </div>
+                        <div id="divRoomSubType">
+                            <ul style="list-style: none;">
+                                <li><mat-checkbox>Any</mat-checkbox></li>
+                                <li><mat-checkbox>(C1) Apartment without Living and Kitchen</mat-checkbox></li>
+                                <li><mat-checkbox>(C) Apartment with living and kitchen</mat-checkbox></li>
+                                <li><mat-checkbox>(A) Studio without Kitchen</mat-checkbox></li>
+                                <li><mat-checkbox>(A1) Studio with Kitchen</mat-checkbox></li>
+                                <li><mat-checkbox>(B) 1BHK Apartment with Living and Kitchen</mat-checkbox></li>
+                                <li><mat-checkbox>(C1) Apartment without Living and Kitchen</mat-checkbox></li>
+                                <li><mat-checkbox>(D1) Apartment without Living & Kitchen in Society</mat-checkbox></li>
+                                <li><mat-checkbox>(D2) Apartment with Living Room in Society</mat-checkbox></li>
+                                <li><mat-checkbox>(E) Villa</mat-checkbox></li>
+                                <li><mat-checkbox>Studio</mat-checkbox></li>
+                                <li><mat-checkbox>0</mat-checkbox></li>
+                               
+                              </ul> 
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-12">
+                    <div class="filter-wrap">
+                        <div class="title">
+                            <h5>Bath Type</h5>
+                        </div>
+                        <div id="divRoomClass">
+                          <ul style="list-style: none;">
+                              <li><mat-checkbox>Any</mat-checkbox></li>
+                              <li><mat-checkbox>Attached</mat-checkbox></li>
+                              <li><mat-checkbox>Non Attached</mat-checkbox></li>
+                          </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row pt-2 mt-2 border-top MviewFixedDesign">
+                <div class="col-lg-12 col-12">
+                    <div class="pull-right inline-display pr-2">
+                        <button class="cancel-fitler" onclick="ResetSearchFilter();">Reset</button>
+                        <button class="apply-filter" onclick="ApplySearchFilter(0);">Apply</button>
+                    </div>
+                </div>
+            </div>
+      
+            </div>
+          </ng-container> -->
+      </mat-radio-group>
+    <div class="mapview" style="margin-left:350px;">
+        <form class="form-inline my-2 my-lg-0">
+            <p>upgrade at colive in those</p>
+            <span style="color: deeppink">8</span>
+            <p>properties</p>&nbsp;&nbsp;
+            <button class="btn btn-outline-danger my-2 my-sm-0" type="submit" [routerLink]="'/mapview'"><b>Map View</b></button>
+          </form>
+    </div>
+   
+  </div>
+</nav>
+
+<!-- normal card -->
+
+<div class="container">
+  <div>
+  <div class="card" style="width:340px; float:left;margin: 15px;"  *ngFor="let item of propertydata.Property">
+    <div class="card-body">
+      <div class="container1">
+        <img alt="{{item.PropertyName}}" src="/assets/images/marathalli (1).jpg" style="height: 211px; border-top-left-radius: calc(.25rem - 1px);
+            border-top-right-radius: calc(.25rem - 1px);">  
+            <!-- <div class="overlay">Quick View</div> -->
+            <div class="overlay">Quick View</div>
+          
+      </div>
+            <!-- <img src="/assets/images/marathalli (1).jpg"> -->
+            <!-- <img *ngIf="item.DetailedImageName != ''; else other_content" src="{{item.DetailedImageName}}">
+            <ng-template #other_content>
+                  <img alt="{{item.PropertyName}}" src="assets/images/CoLive_Logo.png">
+            </ng-template> -->
+          <div class="card-data">
+            <div style="margin-bottom: 0.75rem">{{item.PropertyName}}</div>
+              <div style="margin-bottom: 12px; opacity: 0.5 !important"><span><img src="assets/images/marker (1).png" 
+                  style="width: 15px; margin-right:10px; color: #324b72; line-height: 17px; font-size: 14px; font-weight: 400px;  text-align: left; opacity: 0.5 !important"></span> 
+                    {{item.LocationName}}
+              </div>
+            <div class="row" style="padding-bottom: 20px;">
+                <div class="col-lg-6 col-md-6 col-6">
+                  <div class="price">
+                    <h5 class="">Starting Price</h5>
+                      <i class="fa fa-inr" aria-hidden="true">&nbsp;&nbsp;&nbsp;{{item.Price}}</i>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-6 PropertyViewDesign">
+                  <span class="property" style="color: #007bff">View Property</span>
+                </div>
+            </div>
+              <div>{{item.name}}</div>
+                <hr class="line" style="width: 306.93px;">
+              <div class="scheduleFreeVissit">
+             <span class="property">Schedule a visit</span>
+            </div>
+          </div>
+      <!-- </div> -->
+  </div>
+</div>
+  </div>
+  
+<div>Similar properties</div>
+    <hr>
+    <div class="card" style="width:350px;"  *ngFor="let item of propertydata.SimilarProperties">
+
+        <div class="card-body">
+            <div class="tile" class="cardbody">
+    
+                <img alt="{{item.PropertyName}}" src="../../../../assets/images/marathalli (1).jpg"> 
+                <div class="overlay">My Name is John</div>
+                <!-- <img src="../../../../assets/images/marathalli (1).jpg"> -->
+               <!-- <img *ngIf="item.DetailedImageName != ''; else other_content" src="{{item.DetailedImageName}}">
+                <ng-template #other_content>
+                      <img alt="{{item.PropertyName}}" src="assets/images/CoLive_Logo.png">
+                </ng-template> -->
+              <div style="margin-bottom: 0.75rem">{{item.PropertyName}}</div>
+              <div><span><img src="assets/images/marker (1).png" 
+                style="width: 15px; margin-right:10px; color: #324b72; line-height: 17px; font-size: 14px; font-weight: 400px; opacity: 0.5; text-align: left;"></span> 
+                 {{item.SubLocation}}</div>
+              <div class="row" style="padding-bottom: 40px;">
+                  <div class="col-lg-6 col-md-6 col-6">
+                      <div class="price">
+                          <h5 class="">Starting Price</h5>
+              
+                          <i class="fa fa-inr" aria-hidden="true">{{item.Price}}</i>
+                      </div>
+                  </div>
+                  <div class="col-lg-6 col-md-6 col-6 PropertyViewDesign">
+                      <span class="property" style="color: #007bff">View Property</span>
+                  </div>
+              </div>
+      
+              <div>{{item.name}}</div>
+              <hr class="line" style="width: 306.93px;">
+              <div class="scheduleFreeVissit">
+                 <span class="property">Schedule a visit</span>
+              </div>
+            </div>
+        </div>
+</div> 
+</div>

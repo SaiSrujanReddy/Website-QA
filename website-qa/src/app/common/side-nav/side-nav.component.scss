@@ -1,0 +1,72 @@
+#leftCol {
+    position: fixed;
+    width: 250px;
+    background-color: #DDD; 
+    font-size: 21px;
+    overflow-y: scroll;
+    top: 0;
+    bottom: 0;
+   
+}
+
+#content {
+    position: relative;            
+    margin-left: 150px;
+}
+mat-panel-title{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+}
+// ul {
+//     list-style: none;
+
+//     margin-left:-20px;
+// }
+// ul li{
+//     padding: 10px;
+
+// }
+//  mat-panel-title:hover{
+//      color: #fff;
+//  }
+// mat-expansion-panel-header:hover {
+//     background-color: #bd1261 !important;
+   
+//   }
+//  ul li:hover {
+//     background-color: #bd1261 !important;
+//     width: 200%;
+//     color: #fff;
+
+
+// }
+
+// newly attached  style
+.matIcon{
+    position: absolute;
+    right: 10px;
+    color: grey;
+    font-size: 24px;
+    // margin-top: -18px;
+    // transition: 4s;
+    margin-top: -2px;
+}
+.mat-expansion-panel{
+    margin-bottom: 0px  !important;
+    border-radius: 0px !important;
+    position: relative;
+    display: inline-block;
+    float: left;
+    width: 100%;
+}
+.mat-expansion-panel:not([class*=mat-elevation-z]){
+    box-shadow: unset !important;
+}
+.matHeaderIcon{
+    margin-right: 15px;
+    font-size: 20px;
+    display: flex;
+    position: relative;
+    float: left;
+    align-items: center;
+}

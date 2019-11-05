@@ -1,0 +1,25 @@
+.authLayout-backgroungImage{
+  // background: url("assets/images/login_banner.jpg");
+  background: url('../../../assets/images/login_banner.jpg') no-repeat center center fixed;  
+  min-height: 657px;
+  background-size: cover;
+  background-position: 100% 100%;
+}
+.authLayoutContent-section {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.authLayoutContent-panel {
+  position: relative;
+  display: block;
+  width:25%;
+  margin: auto;
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+}

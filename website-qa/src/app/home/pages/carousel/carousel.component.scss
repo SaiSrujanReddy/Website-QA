@@ -1,0 +1,56 @@
+.leftRs{
+    position: absolute;
+    top:45%;
+    left:0;
+    color:  deeppink;
+    opacity: 0.5;
+}
+.rightRs{
+    position: absolute;
+    top:45%;
+    right:0;
+    color:  deeppink;
+    opacity: 0.5;
+}
+.myPoint {
+    list-style-type: none;
+    text-align: center;
+    padding: 12px;
+    margin: 0;
+    white-space: nowrap;
+    overflow: auto;
+    box-sizing: border-box;
+  }
+  .myPoint  li {
+      display: inline-block;
+      border-radius: 50%;
+      border: 2px solid rgba(0, 0, 0, 0.55);
+      padding: 4px;
+      margin: 0 3px;
+      transition-timing-function: cubic-bezier(0.17, 0.67, 0.83, 0.67);
+      transition: 0.4s;
+  }
+  .myPoint  li.active {
+        background: deeppink;
+        transform: scale(1.2);
+      }
+  .navMenu {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    li {
+      display: flex;
+      a {
+        padding: 10px;
+        text-decoration: none;
+        color: black;
+        &.active {
+          background: goldenrod;
+        }
+        background: #ccc;
+        border-radius: 6px;
+      }
+      margin: 3px;
+    }
+}
